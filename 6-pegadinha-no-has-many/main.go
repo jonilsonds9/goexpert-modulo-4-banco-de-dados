@@ -48,7 +48,7 @@ func main() {
 	//db.Create(&SerialNumber{Number: "123456789", ProductID: product.ID})
 
 	var categories []Category
-	err = db.Model(&Category{}).Preload("Products").Preload("Products.SerialNumber").Find(&categories).Error
+	err = db.Model(&Category{}).Preload("Products.SerialNumber").Find(&categories).Error
 	if err != nil {
 		panic(err)
 	}
